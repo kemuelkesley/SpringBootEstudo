@@ -20,15 +20,18 @@ public class PopulacaoInicialBanco implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		Pessoa p1 = new Pessoa("João");
 		
+		
+		Pessoa p1 = new Pessoa("João Alberto");
 		
 		p1.setDataNascimento(LocalDate.of(1990, 4, 1));
 		p1.setEmail("joao@gmail.com");
 		
-		Pessoa p2 = new Pessoa("Maria");
+		Pessoa p2 = new Pessoa("Maria da Silva");
 		p2.setDataNascimento(LocalDate.of(1995, 8, 5));
 		p2.setEmail("maria@gmail.com");
+		
+		
 		
 		
 		pessoaRepo.save(p1);
