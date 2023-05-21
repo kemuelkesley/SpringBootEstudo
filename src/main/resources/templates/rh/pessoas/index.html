@@ -12,11 +12,16 @@
 
 </head>
 <body>
-	<div class="container my-5 " >
-		<h1 style="text-align: center;">Pessoas</h1>
+	<div class="container my-5">
+		<hr>
+			<h1 style="text-align: center;">Clientes Cadastrados</h1>
+		<hr>
 		
-		
-		<a th:href="@{/rh/pessoas/nova}" class="btn btn-primary btn-md mb-3 float-left">Incluir Pessoa</a>
+		<div>
+			<a th:href="@{/rh/pessoas/nova}"class="btn btn-primary btn-md mb-3 float-left">
+				<i class="fas fa-plus"></i> Incluir Pessoa
+			</a>
+		</div>	
 		
 		<table border="1" class="table table-striped table-responsive-md">
 			<thead align="center">
@@ -29,20 +34,26 @@
 				</tr>
 			</thead>
 			<tbody align="center">
-				<tr th:each="pessoa : ${listaPessoas}">					
+				<tr th:each="pessoa : ${listaPessoas}">
 					<td th:text="${pessoa.nome}"></td>
 					<td th:text="${pessoa.telefone}"></td>
-					<td th:text= ${pessoa.dataNascimento}></td>
+					<td th:text=${pessoa.dataNascimento}></td>
 					<td th:text="${pessoa.email}"></td>
 					<td>
-						<a th:href="@{/rh/pessoas/{id}(id=${pessoa.id})}" class="btn btn-primary">Alterar</a>
-						<a th:href="@{/rh/pessoas/excluir/{id}(id=${pessoa.id})}" class="btn btn-danger">Excluir</a>
+						<a th:href="@{/rh/pessoas/{id}(id=${pessoa.id})}"class="btn btn-primary mr-2">Alterar</a>
+					    <a th:href="@{/rh/pessoas/excluir/{id}(id=${pessoa.id})}" class="btn btn-danger">Excluir</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		
+
 	</div>
+	
+	<footer>
+		<div align="center">
+			My System 2023 dev: kemMaster
+		</div>
+	</footer>
 	
 </body>
 </html>

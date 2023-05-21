@@ -31,11 +31,12 @@ public class PopulacaoInicialBanco implements CommandLineRunner {
 		p2.setDataNascimento(LocalDate.of(1995, 8, 5));
 		p2.setEmail("maria@gmail.com");
 		
-		
+		Pessoa p3 = new Pessoa("Leila oliveira");
 		
 		
 		pessoaRepo.save(p1);
 		pessoaRepo.save(p2);
+		pessoaRepo.save(p3);
 	}
 	
 	

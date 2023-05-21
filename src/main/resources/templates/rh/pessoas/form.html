@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<div class="container my-5" align="center">
+	<div class="container my-5 " align="center">
 				
 			<hr>
 			<h2>Sistema de Gestão de Pessoas</h2>	
@@ -20,10 +20,10 @@
 			<h3 >Cadastrar Pessoa</h3>
 			<br><br>
 			<form action="#" th:action="@{/rh/pessoas/salvar}" th:object="${pessoa}" method="POST">
-				<input type="hidden" id="id" th:field=*{id}>
-				<input type="text" th:field="*{nome}" placeholder="Nome" class="form-control mb-4 col-4"  required th:errorclass="is-invalid" >		
-				<input type="date" th:field="*{dataNascimento}" placeholder="Data Nascimento" class="form-control mb-4 col-4" required th:errorclass="is-invalid">		
-				<input type="text" th:field="*{cpf}" placeholder="CPF" class="form-control mb-4 col-4" required th:errorclass="is-invalid">		
+				<input type="hidden" id="id" th:field=*{id}>				
+				<input type="text" th:field="*{nome}" placeholder="Nome" class="form-control mb-4 col-4"/>		
+				<input type="date" th:field="*{dataNascimento}" placeholder="Data Nascimento" class="form-control mb-4 col-4">		
+				<input type="text" th:field="*{cpf}" placeholder="CPF" class="form-control mb-4 col-4"/>		
 				<input type="text" th:field="*{email}" placeholder="E-mail" class="form-control mb-4 col-4" required th:errorclass="is-invalid">		
 				<input type="text" th:field="*{telefone}" placeholder="Telefone" class="form-control mb-4 col-4" required th:errorclass="is-invalid">
 				
