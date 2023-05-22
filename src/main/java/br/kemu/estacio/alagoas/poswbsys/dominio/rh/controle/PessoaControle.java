@@ -3,8 +3,11 @@ package br.kemu.estacio.alagoas.poswbsys.dominio.rh.controle;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,7 +39,12 @@ public class PessoaControle {
 	}
 	
 	@PostMapping("/rh/pessoas/salvar")
-	public String salvarPessoa(@ModelAttribute("pessoa") Pessoa pessoa) {
+	public String salvarPessoa(@Valid @ModelAttribute("pessoa") Pessoa pessoa, BindingResult bindingResult) {
+		
+		if (bindingResult.hasErrors()) {
+			return "rh/pessoas/form";
+		}
+		
 		pessoaRepo.save(pessoa);
 		return "redirect:/rh/pessoas";
 		

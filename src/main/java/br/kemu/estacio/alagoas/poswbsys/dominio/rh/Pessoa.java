@@ -7,8 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 
 import org.hibernate.annotations.BatchSize;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -18,13 +21,16 @@ public class Pessoa {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	
+	@javax.validation.constraints.NotBlank(message = "O campo nome não pode estar vazio.")
 	private String nome;
 	
 	@DateTimeFormat(pattern =  "yyyy-MM-dd")
 	private LocalDate dataNascimento;
 	
+	
 	private String cpf;
+	
+	@Email
 	private String email;
 	private String telefone;
 	
